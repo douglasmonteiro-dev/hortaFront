@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -6,29 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  title = 'PokeApp';
-  pokemons: Array<any> = [ ];
-  pokemonsPorPagina = 0;
-  total = 0;
-  proximo: string = null;
-  anterior: string = null;
+  title = 'Horta';
+  temperatura = 0;
+  temperaturaMedia = 0;
+  umidade = 0;
+  iluminacao: string = null;
+  rega: string = null;
   paginas = 0;
   showSearchInput: boolean;
 
+
   constructor() {
-    // this.listar();
   }
 
   ngOnInit() {
   }
-  // onScroll() {
-  //   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-  //     this.proximaPagina();
-  //   }
-  // }
-  setPokemonsPorPagina() {
-    this.paginas = this.total / this.pokemonsPorPagina;
+  onScroll() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      // this.proximaPagina();
+    }
   }
 
   // listar() {

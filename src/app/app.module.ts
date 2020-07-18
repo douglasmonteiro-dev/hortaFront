@@ -7,15 +7,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './pages/home/home.component';
-import { MatIconModule } from '@angular/material/icon/icon-module';
-import { MatToolbarModule } from '@angular/material/toolbar/toolbar-module';
-import { MatButtonModule } from '@angular/material/button/button-module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+
+
+import { PlantasComponent } from './pages/plantas/plantas.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PlantasComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +30,8 @@ import { MatButtonModule } from '@angular/material/button/button-module';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatTableModule,
+    MatCardModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
